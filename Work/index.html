@@ -1,0 +1,225 @@
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="https://cdn-icons-png.freepik.com/256/3673/3673355.png?semt=ais_hybrid"
+    />
+    <title>Work</title>
+    <link rel="stylesheet" href="/styles/null.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <style>
+
+        .rus {
+            max-width: 150px; /* Ширина блока с русским текстом */
+            border-right:1px solid black ;
+            width: 50%;
+        }
+        .eng {
+            color: white; /* Цвет текста */
+            margin: 5px; /* Отступы внутри блока */
+            text-align: right; /* Выравнивание текста по правому краю */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .delete-btn {
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1 class="name__title">T.R.A.N.S.L.I.T.</h1>
+            <form id="wordForm" action="">
+                <input
+                    type="text"
+                    id="wordInput"
+                    placeholder="Начните вводить текст"
+                    required
+                />
+                <input type="submit" class="submit" value="Добавить" />
+            </form>
+            <div class="dictionary" id="dictionary">
+                <div class="entry">
+                    <div class="rus" title="Привет!">1. Привет 👋🏻</div>
+                    <div class="eng" title="Privet!">Privet!</div>
+                    <span class="delete-btn" onclick="deleteEntry(this)">
+                    <img src="/images/icon__delete.svg" alt=""></span>
+                </div>
+            </div>
+            <button class="reset__btn" id="resetBtn">
+                <img src="/images/icon__delete.svg" alt="icon" />Очистить всё
+            </button>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wordForm = document.getElementById('wordForm');
+            const wordInput = document.getElementById('wordInput');
+            const dictionary = document.getElementById('dictionary');
+            const resetBtn = document.getElementById('resetBtn');
+
+            function transliterate(text) {
+                const translitMap = {
+                    'А': 'A', 'Б': 'B', 'В': 'V', 'Г': 'G', 'Д': 'D', 'Е': 'E', 'Ё': 'Yo',
+                    'Ж': 'Zh', 'З': 'Z', 'И': 'I', 'Й': 'Y', 'К': 'K', 'Л': 'L', 'М': 'M',
+                    'Н': 'N', 'О': 'O', 'П': 'P', 'Р': 'R', 'С': 'S', 'Т': 'T', 'У': 'U',
+                    'Ф': 'F', 'Х': 'Kh', 'Ц': 'Ts', 'Ч': 'Ch', 'Ш': 'Sh', 'Щ': 'Shch', 'Ъ': '',
+                    'Ы': 'Y', 'Ь': '', 'Э': 'E', 'Ю': 'Yu', 'Я': 'Ya',
+                    'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'yo',
+                    'ж': 'zh', 'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm',
+                    'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u',
+                    'ф': 'f', 'х': 'kh', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ъ': '',
+                    'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'
+                };
+                return text.split('').map(char => translitMap[char] || char).join('');
+            }
+
+            wordForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const inputText = wordInput.value.trim();
+                if (inputText) {
+                    const transliteratedText = transliterate(inputText);
+                    const newEntry = document.createElement('div');
+                    newEntry.className = 'entry';
+                    newEntry.innerHTML = `<div class="rus" title="${inputText}">${dictionary.children.length + 1}. ${inputText}</div>
+                                          <div class="eng" title="${transliteratedText}">${transliteratedText}</div>
+                                          <span class="delete-btn" onclick="deleteEntry(this)">✖</span>`;
+                    dictionary.appendChild(newEntry);
+                    wordInput.value = '';
+                }
+            });
+
+            resetBtn.addEventListener('click', () => {
+                while (dictionary.children.length > 1) {
+                    dictionary.removeChild(dictionary.lastChild);
+                }
+            });
+
+            window.deleteEntry = function (btn) {
+                const entry = btn.parentElement;
+                dictionary.removeChild(entry);
+                updateLineNumbers();
+            };
+
+            function updateLineNumbers() {
+                const entries = dictionary.querySelectorAll('.entry');
+                entries.forEach((entry, index) => {
+                    const rusText = entry.querySelector('.rus');
+                    rusText.innerHTML = `${index + 1}. ${rusText.innerHTML.replace(/^\d+\.\s/, '')}`;
+                });
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="https://cdn-icons-png.freepik.com/256/3673/3673355.png?semt=ais_hybrid"
+    />
+    <title>Work</title>
+    <link rel="stylesheet" href="/styles/null.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <style>
+
+        .block {
+            width: 48%; 
+        }
+
+        .block__eng {
+          width: 48%;
+          background-color: rgba(41, 41, 41, 0.393);
+        }
+        .rus {
+            max-width: 150px; 
+            padding: 5px;
+        }
+        .eng {
+
+            padding: 5px;
+            text-align: right; 
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .delete-btn {
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1 class="name__title">T.R.A.N.S.L.I.T.</h1>
+            <form id="wordForm" action="">
+                <input
+                    type="text"
+                    id="wordInput"
+                    placeholder="Начните вводить текст"
+                    required
+                />
+                <input type="submit" class="submit" value="Добавить" />
+            </form>
+            <div class="dictionary" id="dictionary">
+                <div class="block" id="rusBlock">
+                    <div class="entry">
+                        <div class="rus" title="Привет!">1. Привет 👋🏻</div>
+                       
+                    </div>
+                </div>
+                <div class="block__eng" id="engBlock">
+                    <div class="entry">
+                        <div class="eng" title="Privet!">Privet!</div>
+                            <img src="/images/icon__delete.svg" class="delete-btn" onclick="deleteEntry(this)" alt="Удалить" />
+                    </div>
+                </div>
+            </div>
+            <button class="reset__btn" id="resetBtn">
+                <img src="/images/icon__delete.svg" alt="icon" />Очистить всё
+            </button>
+        </div>
+    </main>
+    <script src="/scripts/index.js">
+       
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+@font-face {
+  font-family: IBM Regular;
+  src: url("/fonts/IBMPlexMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: IBM SemiBold;
+  src: url("/fonts/IBMPlexMono-SemiBold.ttf");
+}
+
+body {
+  font-family: IBM Regular;
+}
+
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0px 10px;
+  text-align: center;
+}
+
+/* container */
+
+input[type="text"] {
+  border: 2px solid #111111;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  height: 56px;
+  border-radius: 14px;
+  padding: 0px 18px;
+}
+
+input[type="submit"] {
+  position: absolute;
+  right: 0;
+  width: 107px;
+  height: 38px;
+  border: none;
+  background-color: #111111;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  right: 10px;
+}
+
+form {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.name__title {
+  color: #4520ab;
+  font-weight: 600;
+  font-size: 40px;
+  font-family: IBM SemiBold;
+  margin-bottom: 97px;
+  margin-top: 57px;
+}
+
+.reset__btn {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #adadad;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dictionary {
+  display: flex;  
+  background-color:#F0F0F0 ;
+  margin: 60px 0px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* 
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  padding: 0px 10px;
+} */
+
+
+
+
+@media (max-width: 768px) {
+  
+}
+
+
+@media (max-width: 360px) {
+  
+}
